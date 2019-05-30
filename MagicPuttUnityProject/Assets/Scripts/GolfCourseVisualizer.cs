@@ -25,7 +25,7 @@ public class GolfCourseVisualizer : MonoBehaviour
 
         golfCourse.SetActive(true);
         golfCourse.transform.position = _trackerBehavior.transform.position;
-        golfCourse.transform.rotation = _trackerBehavior.transform.rotation;
+        golfCourse.transform.eulerAngles = new Vector3(0, _trackerBehavior.transform.eulerAngles.y, 0);
 
         golfBall.transform.position = new Vector3(_trackerBehavior.transform.position.x, _trackerBehavior.transform.position.y + 0.5f, _trackerBehavior.transform.position.z);
     }
