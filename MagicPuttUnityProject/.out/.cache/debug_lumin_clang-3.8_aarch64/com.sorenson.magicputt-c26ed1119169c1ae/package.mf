@@ -22,16 +22,16 @@
   },
   {
    "compression": 8,
-   "hash": "67de3a2a050effaf3c0f508fc82d23c1ef62a165",
+   "hash": "f7edd336886e7c4d9477eafbc1e4810a11292b2c",
    "pkgpath": "Data/Managed/Metadata/global-metadata.dat",
-   "size": 3199516,
+   "size": 3198788,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/Managed/Metadata/global-metadata.dat"
   },
   {
    "compression": 8,
-   "hash": "45d456229dfd7f9cbb8fc694ca94a839241a5e91",
+   "hash": "25a7c718ce3f6c431a4c357ea79da38661d7ab71",
    "pkgpath": "bin/libil2cpp.so",
-   "size": 47293424,
+   "size": 47280480,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/Native/libil2cpp.so",
    "xfrm_flags": {
     "signed": {
@@ -43,9 +43,9 @@
      "version": 3
     }
    },
-   "xfrm_hash": "0fad3c07802830df5dda0dbd3479c0332078232a",
+   "xfrm_hash": "8394f217e0847f487d0bfa19bf29f913a25d5773",
    "xfrm_path": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/.out/.cache/debug_lumin_clang-3.8_aarch64/com.sorenson.magicputt-c26ed1119169c1ae/libil2cpp.so-c01c8f74b4285f47",
-   "xfrm_size": 47294182
+   "xfrm_size": 47281238
   },
   {
    "compression": 8,
@@ -178,23 +178,23 @@
   },
   {
    "compression": 8,
-   "hash": "a6f9b0538a49f4a03025dc7234cd5589d214c3aa",
+   "hash": "cab60b56b307986800f03ee844b005c621c3c54a",
    "pkgpath": "Data/globalgamemanagers",
-   "size": 45248,
+   "size": 45256,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/globalgamemanagers"
   },
   {
    "compression": 8,
-   "hash": "59d5687691af12cc28a08dab8d4c1c7282e742d8",
+   "hash": "2d87400e146f8ac801ae03b715cc4c080a47409c",
    "pkgpath": "Data/globalgamemanagers.assets",
-   "size": 66544,
+   "size": 66516,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/globalgamemanagers.assets"
   },
   {
    "compression": 8,
-   "hash": "3c03e74b5bc26e8fde4ea7bb3959b44cc9189ce6",
+   "hash": "ae2331714027bbc14b5ab9515d1ca083548f657a",
    "pkgpath": "Data/level0",
-   "size": 16676,
+   "size": 16668,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/level0"
   },
   {
@@ -206,7 +206,7 @@
   },
   {
    "compression": 8,
-   "hash": "a32b341b5c50ca7a81c0bf7c66a9301c8c2945ee",
+   "hash": "a5aaa6627eab2a5fa0bc7a9c944bbe8688d2a1c1",
    "pkgpath": "Data/resources.assets",
    "size": 524208,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/resources.assets"
@@ -220,7 +220,7 @@
   },
   {
    "compression": 8,
-   "hash": "4588008ec3bef26538607c57b23847cb52d95baa",
+   "hash": "e7ccabed5df9bbc8fa01aeb188409a3b3e69af40",
    "pkgpath": "Data/sharedassets0.assets",
    "size": 5338996,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/sharedassets0.assets"

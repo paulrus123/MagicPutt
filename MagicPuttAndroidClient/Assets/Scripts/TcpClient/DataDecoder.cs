@@ -19,6 +19,7 @@ public static class DataDecoder
 
     public static int DecodeString(NetworkStream stream)
     {
+        Debug.Log("Decoding");
         byte[] bytes = new byte[1024 * 2];
         int length;
         if ((length = stream.Read(bytes, 0, bytes.Length)) != 0)
@@ -38,7 +39,8 @@ public static class DataDecoder
             rotation.y = (float)Convert.ToDouble(stringList[4]);
             rotation.z = (float)Convert.ToDouble(stringList[5]);
 
-            int numPoints = (int)Convert.ToDouble(stringList[0]);
+            Debug.Log("Decoded");       
+
 
             if(OnPositionDecoded != null)
             {

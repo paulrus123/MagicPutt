@@ -29,10 +29,4 @@ public class GolfCourseVisualizer : MonoBehaviour
 
         golfBall.transform.position = new Vector3(_trackerBehavior.transform.position.x, _trackerBehavior.transform.position.y + 0.5f, _trackerBehavior.transform.position.z);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

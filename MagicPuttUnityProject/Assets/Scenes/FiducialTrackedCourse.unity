@@ -2904,8 +2904,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4021453259625492063}
-  - component: {fileID: 4021453259625492388}
   - component: {fileID: 4021453259625492387}
+  - component: {fileID: 4021453259625492388}
   m_Layer: 0
   m_Name: TcpServer
   m_TagString: Untagged
@@ -2927,6 +2927,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   golfClub: {fileID: 223974226}
   golfCourse: {fileID: 2058396426}
+  _server: {fileID: 4021453259625492388}
 --- !u!114 &4021453259625492388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,8 +2937,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4021453259625492386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e6ba72ee73b9477d874d8ef5bb02b84, type: 3}
+  m_Script: {fileID: 11500000, guid: 1224faa3fa2a84a8da6374938a5bdb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hostname: localhost
-  port: 4444

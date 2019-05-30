@@ -59,13 +59,18 @@ public class TcpClientHandler : MonoBehaviour
     {
         try
         {
+            Debug.Log("Trying to receive data");
             m_client = new TcpClient(hostName, port);
+            Debug.Log("created a client");
+
             using (NetworkStream stream = m_client.GetStream())
             {
                 while (true)
                 {
+                    Debug.Log("Listening");
                     if (DataDecoder.DecodeString(stream) == 0) 
                     {
+                        Debug.Log("Received Data!");
                         break; 
                     }
                 }

@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class ClubPositionHandler : MonoBehaviour
 {
+    private void Start()
+    {
+        DataDecoder.OnPositionDecoded += ReceiveNewPosition;
+        DataDecoder.OnRotationDecoded += ReceiveNewRotation;
+    }
+
+    Vector3 _position;
+    Vector3 _rotation;
+
+    private void Update()
+    {
+        transform.localPosition = _position;
+        transform.localEulerAngles = _rotation;
+
+    }
+
+
     void ReceiveNewPosition(Vector3 position)
     {
-        transform.localPosition = position;
+        Debug.Log("Position: " + position);
+        _position = position;
     }
 
     void ReceiveNewRotation(Vector3 rotation)
     {
-        transform.localEulerAngles = rotation;
+        Debug.Log("Rotation: " + rotation);
+        _rotation = rotation;
     }
 }
