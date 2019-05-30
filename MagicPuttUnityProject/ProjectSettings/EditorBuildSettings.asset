@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/FiducialTrackedCourse.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/MagicLeap/Examples/Scenes/Controller.unity
+    guid: 62a07dca92e019646a2932bacb6d4387
   m_configObjects: {}
