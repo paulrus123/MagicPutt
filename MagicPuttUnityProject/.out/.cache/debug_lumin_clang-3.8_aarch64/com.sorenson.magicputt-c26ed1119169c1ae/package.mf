@@ -178,7 +178,7 @@
   },
   {
    "compression": 8,
-   "hash": "cab60b56b307986800f03ee844b005c621c3c54a",
+   "hash": "4acd61f5e01f2b31bb57a68046da8096583edc97",
    "pkgpath": "Data/globalgamemanagers",
    "size": 45256,
    "src": "/Users/pausor/repo/Personal/MagicPutt/MagicPuttUnityProject/Temp/StagingArea/Data/globalgamemanagers"
