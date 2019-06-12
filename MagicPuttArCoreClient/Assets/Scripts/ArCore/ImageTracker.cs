@@ -36,11 +36,6 @@ public class ImageTracker : MonoBehaviour
             {
                 // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                 Anchor anchor = image.CreateAnchor(image.CenterPose);
-                GolfCourse.transform.position = anchor.transform.position;
-                GolfCourse.transform.rotation = anchor.transform.rotation;
-                GolfCourse.transform.parent = anchor.transform;
-                GolfCourse.SetActive(true);
-
                 visualizer = (AugmentedImageVisualizer)Instantiate(AugmentedImageVisualizerPrefab, anchor.transform);
                 visualizer.Image = image;
                 m_Visualizers.Add(image.DatabaseIndex, visualizer);
@@ -49,6 +44,17 @@ public class ImageTracker : MonoBehaviour
             {
                 m_Visualizers.Remove(image.DatabaseIndex);
                 Destroy(visualizer.gameObject);
+            }
+
+            if(Input.touchCount > 0)
+            {
+                //World Anchor
+                Pose pose = image.CenterPose;
+                Anchor worldAnchor = Session.CreateAnchor(pose);
+                GolfCourse.transform.position = worldAnchor.transform.position;
+                GolfCourse.transform.rotation = worldAnchor.transform.rotation;
+                GolfCourse.transform.parent = worldAnchor.transform;
+                GolfCourse.SetActive(true);
             }
         }
 
