@@ -15,7 +15,7 @@ public class ClubPositionHandler : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition = _position * transform.localScale.x;
+        transform.localPosition = _position;
         transform.localEulerAngles = _rotation;
 
     }

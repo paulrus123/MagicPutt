@@ -5,7 +5,9 @@ using System.Net;
 using System.Net.Sockets; 
 using System.Text; 
 using System.Threading; 
-using UnityEngine;  
+using UnityEngine;
+using UnityEngine.XR.MagicLeap;
+
 
 public class TcpServer : MonoBehaviour {    
     #region private members     
@@ -25,10 +27,21 @@ public class TcpServer : MonoBehaviour {
     #endregion
 
     string serverMessage;
-        
+
     // Use this for initialization
-    void Start () {         
+    bool isAlive = false;
+
+    public TextMesh tcpTextMesh;
+
+    private void Start()
+    {
+        MLInput.OnControllerButtonDown += HandleBumperDown;
+        StartServer();
+    }
+
+    void StartServer () {
         // Start TcpServer background thread        
+        isAlive = true;
         tcpListenerThread = new Thread (new ThreadStart(ListenForIncommingRequests));       
         tcpListenerThread.IsBackground = true;      
         tcpListenerThread.Start();  
@@ -44,7 +57,7 @@ public class TcpServer : MonoBehaviour {
             tcpListener.Start();              
             Debug.Log("Server is listening");              
             Byte[] bytes = new Byte[1024];              
-            while (true) {              
+            while (isAlive) {              
                 using (connectedTcpClient = tcpListener.AcceptTcpClient()) {                    
                     // Get a stream object for reading                  
                     using (NetworkStream stream = connectedTcpClient.GetStream()) {                         
@@ -95,5 +108,31 @@ public class TcpServer : MonoBehaviour {
         catch (SocketException socketException) {             
             Debug.Log("Socket exception: " + socketException);         
         }   
-    } 
+    }
+
+
+    void HandleBumperDown(byte controller_id, MLInputControllerButton button)
+    {
+        if ((button == MLInputControllerButton.Bumper))
+        {
+            if(isAlive)
+            {
+                ResetServer();
+            }
+            else
+            {
+                StartServer();
+            }
+        }
+    }
+
+    public void ResetServer()
+    {
+        isAlive = false;
+    }
+
+    private void Update()
+    {
+        tcpTextMesh.text = isAlive ? "Connected" : "Disconnected";
+    }
 }

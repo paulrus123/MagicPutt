@@ -5,9 +5,10 @@ public class ConnectionHandler : MonoBehaviour
 {
     TcpClientHandler clientHandler;
 
-    public string stringToEdit = "127.0.0.1";
+    public string stringToEdit = "10.0.0.90";
     public string port = "4444";
     private TouchScreenKeyboard keyboard;
+    public GameObject button;
 
     private void Start()
     {
@@ -26,12 +27,21 @@ public class ConnectionHandler : MonoBehaviour
         port = GUI.TextField(new Rect(250*2, 20, 200*2, 30*2), port, 30, style);
     }
 
+    private void Update()
+    {
+        if(clientHandler.isConnected())
+        {
+            button.SetActive(false);
+        }
+    }
+
     public void TryConnect()
     {
         clientHandler.hostName = stringToEdit;
         clientHandler.port = Int32.Parse(port);
         if (clientHandler.isConnected())
-            clientHandler.Disconnect();
+            //clientHandler.Disconnect();
+            return;
         else
         {
             clientHandler.ConnectToServer();

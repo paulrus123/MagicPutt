@@ -41,6 +41,7 @@ public class TcpClientHandler : MonoBehaviour
     {
         try
         {
+            m_client.Dispose();
             m_client.Close();
             m_client = null;
             clientThread.Abort();
@@ -53,7 +54,13 @@ public class TcpClientHandler : MonoBehaviour
         }
     }
 
-
+    private void OnDestroy()
+    {
+        if(m_client.Connected)
+        {
+            Disconnect();
+        }
+    }
 
     private void ReceiveData()
     {

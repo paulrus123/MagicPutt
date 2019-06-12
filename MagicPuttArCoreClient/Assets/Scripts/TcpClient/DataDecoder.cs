@@ -17,6 +17,9 @@ public static class DataDecoder
     public delegate void RotationDecoded(Vector3 rotation);
     public static event RotationDecoded OnRotationDecoded;
 
+    public delegate void BallPositionDecoded(Vector3 ballPosition);
+    public static event BallPositionDecoded OnBallPositionDecoded;
+
     public static int DecodeString(NetworkStream stream)
     {
         Debug.Log("Decoding");
@@ -24,33 +27,50 @@ public static class DataDecoder
         int length;
         if ((length = stream.Read(bytes, 0, bytes.Length)) != 0)
         {
-            var data = new byte[length];
-            Array.Copy(bytes, 0, data, 0, length);
-            string serverMessage = Encoding.UTF8.GetString(data);
-            List<string> stringList = serverMessage.Split(',').ToList();
-
-            Vector3 position = new Vector3();
-            position.x = (float)Convert.ToDouble(stringList[0]);
-            position.y = (float)Convert.ToDouble(stringList[1]);
-            position.z = (float)Convert.ToDouble(stringList[2]);
-
-            Vector3 rotation = new Vector3();
-            rotation.x = (float)Convert.ToDouble(stringList[3]);
-            rotation.y = (float)Convert.ToDouble(stringList[4]);
-            rotation.z = (float)Convert.ToDouble(stringList[5]);
-
-            Debug.Log("Decoded");       
-
-
-            if(OnPositionDecoded != null)
+            try
             {
-                OnPositionDecoded(position);
+                var data = new byte[length];
+                Array.Copy(bytes, 0, data, 0, length);
+                string serverMessage = Encoding.UTF8.GetString(data);
+                List<string> stringList = serverMessage.Split(',').ToList();
+
+                Vector3 position = new Vector3();
+                position.x = (float)Convert.ToDouble(stringList[0]);
+                position.y = (float)Convert.ToDouble(stringList[1]);
+                position.z = (float)Convert.ToDouble(stringList[2]);
+
+                Vector3 rotation = new Vector3();
+                rotation.x = (float)Convert.ToDouble(stringList[3]);
+                rotation.y = (float)Convert.ToDouble(stringList[4]);
+                rotation.z = (float)Convert.ToDouble(stringList[5]);
+
+                Vector3 ballPosition = new Vector3();
+                ballPosition.x = (float)Convert.ToDouble(stringList[6]);
+                ballPosition.y = (float)Convert.ToDouble(stringList[7]);
+                ballPosition.z = (float)Convert.ToDouble(stringList[8]);
+
+                Debug.Log("Decoded");
+
+                if (OnPositionDecoded != null)
+                {
+                    OnPositionDecoded(position);
+                }
+                if (OnRotationDecoded != null)
+                {
+                    OnRotationDecoded(rotation);
+                }
+                if (OnBallPositionDecoded != null)
+                {
+                    OnBallPositionDecoded(ballPosition);
+                }
             }
-            if (OnRotationDecoded != null)
+
+            catch
             {
-                OnRotationDecoded(rotation);
+                Debug.Log("Decoding did not work");
             }
         }
         return length;
     }
 }
+
