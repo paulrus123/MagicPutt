@@ -42,7 +42,7 @@ public class ClubPositionEncoder : MonoBehaviour
     public void Send()
     {
         //Populate messages
-        golfBallPositionMessage.position = golfClub.transform.localPosition;
+        golfBallPositionMessage.position = golfBall.transform.localPosition;
         golfClubPoseMessage.position = golfClub.transform.localPosition;
         golfClubPoseMessage.eulerAngles = golfClub.transform.localEulerAngles;
 
