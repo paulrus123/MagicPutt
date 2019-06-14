@@ -7,7 +7,7 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: GrassMat
-  dynamicFriction: 0.72
+  dynamicFriction: 0.45
   staticFriction: 0.51
   bounciness: 0.51
   frictionCombine: 0

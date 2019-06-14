@@ -153,7 +153,7 @@ namespace MagicLeap
         /// </summary>
         public void StartCapture()
         {
-            string fileName = System.DateTime.Now.ToString("MM_dd_yyyy__HH_mm_ss") + _validFileFormat;
+            string fileName = "MacicPutt" + System.DateTime.Now.ToString("MM_dd_yyyy__HH_mm_ss") + _validFileFormat;
             StartCapture(fileName);
         }
 

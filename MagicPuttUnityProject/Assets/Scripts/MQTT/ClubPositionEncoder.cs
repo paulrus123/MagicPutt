@@ -5,11 +5,7 @@ public class ClubPositionEncoder : MonoBehaviour
     public GameObject golfClub;
     public GameObject golfCourse;
     public GameObject golfBall;
-
-    Vector3 clubPosition;
-    Vector3 clubRotation;
-    Vector3 ballPosition;
-
+    
     public MqttClientHandler mqttClientHandler;
 
     GolfClubPoseMessage golfClubPoseMessage;
@@ -20,8 +16,6 @@ public class ClubPositionEncoder : MonoBehaviour
 
     private void Start()
     {
-        clubPosition = new Vector3();
-        clubRotation = new Vector3();
         golfClubPoseMessage = new GolfClubPoseMessage();
         golfBallPositionMessage = new GolfBallPositionMessage();
 
