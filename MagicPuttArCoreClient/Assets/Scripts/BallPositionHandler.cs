@@ -4,22 +4,21 @@ using UnityEngine;
 
 public class BallPositionHandler : MonoBehaviour
 {
-    Vector3 _position;
+    GolfBallPositionMessage golfBallPositionMessage;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        DataDecoder.OnBallPositionDecoded += ReceiveNewBallPosition;
+        golfBallPositionMessage = new GolfBallPositionMessage();
+        MqttClientHandler.OnBallPositionRecieved += ReceiveMessage;
     }
 
-    void ReceiveNewBallPosition(Vector3 position)
+    void ReceiveMessage(string msg)
     {
-        Debug.Log("BallPosition: " + position);
-        _position = position;
+        golfBallPositionMessage = JsonUtility.FromJson<GolfBallPositionMessage>(msg);
     }
 
     private void Update()
     {
-        transform.localPosition = _position;
+        transform.localPosition = golfBallPositionMessage.position;
     }
 }

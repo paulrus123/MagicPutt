@@ -4,32 +4,22 @@ using UnityEngine;
 
 public class ClubPositionHandler : MonoBehaviour
 {
+    GolfClubPoseMessage golfClubPoseMessage;
+
     private void Start()
     {
-        DataDecoder.OnPositionDecoded += ReceiveNewPosition;
-        DataDecoder.OnRotationDecoded += ReceiveNewRotation;
+        golfClubPoseMessage = new GolfClubPoseMessage();
+        MqttClientHandler.OnClubPoseReceived += ReceiveMessage;
     }
-
-    Vector3 _position;
-    Vector3 _rotation;
 
     private void Update()
     {
-        transform.localPosition = _position;
-        transform.localEulerAngles = _rotation;
-
+        transform.localPosition = golfClubPoseMessage.position;
+        transform.localEulerAngles = golfClubPoseMessage.eulerAngles;
     }
 
-
-    void ReceiveNewPosition(Vector3 position)
+    void ReceiveMessage(string msg)
     {
-        Debug.Log("Position: " + position);
-        _position = position;
-    }
-
-    void ReceiveNewRotation(Vector3 rotation)
-    {
-        Debug.Log("Rotation: " + rotation);
-        _rotation = rotation;
+        golfClubPoseMessage = JsonUtility.FromJson<GolfClubPoseMessage>(msg);
     }
 }

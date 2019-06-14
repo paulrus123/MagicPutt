@@ -378,7 +378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &70132682 stripped
 GameObject:
@@ -2067,6 +2067,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114040580}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1136634419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 296750991470699028, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_Name
+      value: MQTTClient
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.030867875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06941813
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02437646
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730954419425943965, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0efdc347af74f4e4a857b805ca55d2ec, type: 3}
 --- !u!1 &1192920042
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,6 +3248,18 @@ MonoBehaviour:
   _trackerBehavior: {fileID: 483087655}
   golfCourse: {fileID: 2058396426}
   golfBall: {fileID: 1202465222}
+--- !u!114 &2009254716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5698590879147533890, guid: 0efdc347af74f4e4a857b805ca55d2ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1136634419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273d4bba458a3492baceaf1dab8f8754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2048317926
 GameObject:
   m_ObjectHideFlags: 0
@@ -3370,6 +3451,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2101766892}
   m_Mesh: {fileID: 4300000, guid: 19e8f0334d30adc46be9a93a73b14e80, type: 3}
+--- !u!1 &2103088415
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103088417}
+  - component: {fileID: 2103088416}
+  m_Layer: 0
+  m_Name: MQTTPublisher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2103088416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103088415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21bffbeafc624f1cab84969ceff3eba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golfClub: {fileID: 223974226}
+  golfCourse: {fileID: 2058396426}
+  golfBall: {fileID: 1202465222}
+  mqttClientHandler: {fileID: 2009254716}
+--- !u!4 &2103088417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103088415}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.2606277, y: 0.036453187, z: -0.016872633}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2113684252
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,67 +3565,6 @@ Transform:
   m_Father: {fileID: 483087654}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4021453259625492063
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021453259625492386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.030867875, y: 0.06941813, z: -0.02437646}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4021453259625492386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4021453259625492063}
-  - component: {fileID: 4021453259625492387}
-  - component: {fileID: 4021453259625492388}
-  m_Layer: 0
-  m_Name: TcpServer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &4021453259625492387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021453259625492386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21bffbeafc624f1cab84969ceff3eba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  golfClub: {fileID: 223974226}
-  golfCourse: {fileID: 2058396426}
-  golfBall: {fileID: 1202465222}
-  _server: {fileID: 4021453259625492388}
---- !u!114 &4021453259625492388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4021453259625492386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1224faa3fa2a84a8da6374938a5bdb67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tcpTextMesh: {fileID: 259715464}
 --- !u!1001 &6038823537719849163
 PrefabInstance:
   m_ObjectHideFlags: 0
