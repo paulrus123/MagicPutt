@@ -6,25 +6,21 @@ using UnityEngine.XR.MagicLeap;
 
 public class GolfCourseVisualizer : MonoBehaviour
 {
-
-    public MLImageTrackerBehavior _trackerBehavior;
+    MLImageTrackerBehavior _trackerBehavior;
     public GameObject golfCourse;
     public GameObject golfBall;
-    public GameObject recordingText;
-
-    bool trackingAllowed = true;
-
 
     // Start is called before the first frame update
     void Start()
     {
         MLInput.OnTriggerDown += HandleOnTriggerDown;
-        MLInput.OnControllerButtonDown += HandleOnBumperDown;
     }
 
     private void HandleOnTriggerDown(byte controllerId, float triggerValue)
     {
-        if (!trackingAllowed)
+        _trackerBehavior = GameObject.FindWithTag("ImageTracker").GetComponent<MLImageTrackerBehavior>();
+
+        if (_trackerBehavior == null)
             return;
         if (!_trackerBehavior.IsTracking)
             return;
@@ -35,20 +31,5 @@ public class GolfCourseVisualizer : MonoBehaviour
 
         golfBall.transform.position = new Vector3(_trackerBehavior.transform.position.x, _trackerBehavior.transform.position.y + 0.5f, _trackerBehavior.transform.position.z);
     }
-
-    private void HandleOnBumperDown(byte controller_id, MLInputControllerButton button)
-    {
-        //if (button == MLInputControllerButton.Bumper)
-        //{
-        //    trackingAllowed = !trackingAllowed;
-        //    if (trackingAllowed)
-        //    {
-        //        MLCamera.StartVideoCapture("/documents/magicPuttCapture" + DateTime.Now.ToFileTime());
-        //    }
-        //    else
-        //        MLCamera.StopVideoCapture();
-
-        //    recordingText.SetActive(trackingAllowed);
-        //}
-    }
 }
+

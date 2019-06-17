@@ -9,7 +9,7 @@ using UnityEngine;
 public class ClubHeadSpawner : MonoBehaviour
 {
     [SerializeField]
-    ClubHeadFollower _followerPrefab;
+    ClubHeadFollower _followerPrefab = default;
 
     // Start is called before the first frame update
     void Start()
