@@ -42,7 +42,7 @@ public class VideoRecorder : MonoBehaviour
     void StopVideoRecording()
     {
         _isRecording = false;
-        _recordingIcon.enabled = false;
+        //_recordingIcon.enabled = false;
 
         //Stop Recording
         /* ------------------------------------------------------------------------------------------------------------*/

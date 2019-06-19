@@ -24,6 +24,9 @@ public class MqttClientHandler : MonoBehaviour
     public delegate void ClubPoseReceived(string msg);
     public static event ClubPoseReceived OnClubPoseReceived;
 
+    public delegate void CameraPoseReceived(string msg);
+    public static event CameraPoseReceived OnCameraPoseReceived;
+
     // Use this for initialization
     void Start()
     {
@@ -40,8 +43,10 @@ public class MqttClientHandler : MonoBehaviour
             //Bug in Library - cannot subscribe to multiple topics at once
             string[] topic1 = new string[] { "MagicPutt/GolfClubPose" };
             string[] topic2 = new string[] { "MagicPutt/GolfBallPosition" };
+            string[] topic3 = new string[] { "MagicPutt/CameraPose" };
             Subscribe(topic1);
             Subscribe(topic2);
+            Subscribe(topic3);
 
         }
     }
@@ -108,6 +113,10 @@ public class MqttClientHandler : MonoBehaviour
             case "MagicPutt/GolfBallPosition":
                 if (OnBallPositionRecieved != null)
                     OnBallPositionRecieved(System.Text.Encoding.UTF8.GetString(e.Message));
+                break;
+            case "MagicPutt/CameraPose":
+                if (OnCameraPoseReceived != null)
+                    OnCameraPoseReceived(System.Text.Encoding.UTF8.GetString(e.Message));
                 break;
             default:
                 break;

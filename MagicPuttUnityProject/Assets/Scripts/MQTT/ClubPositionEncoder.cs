@@ -2,14 +2,17 @@
 
 public class ClubPositionEncoder : MonoBehaviour
 {
+    public GameObject trackedImage;
     public GameObject golfClub;
     public GameObject golfCourse;
     public GameObject golfBall;
+    public GameObject magicLeapCamera;
     
     public MqttClientHandler mqttClientHandler;
 
     GolfClubPoseMessage golfClubPoseMessage;
     GolfBallPositionMessage golfBallPositionMessage;
+    MagicLeapCameraPoseMessage cameraPoseMessage;
 
     float currTime;
     readonly float timeOut = 0.03f;
@@ -18,6 +21,7 @@ public class ClubPositionEncoder : MonoBehaviour
     {
         golfClubPoseMessage = new GolfClubPoseMessage();
         golfBallPositionMessage = new GolfBallPositionMessage();
+        cameraPoseMessage = new MagicLeapCameraPoseMessage();
 
         currTime = 0;
     }
@@ -40,11 +44,17 @@ public class ClubPositionEncoder : MonoBehaviour
         golfClubPoseMessage.position = golfClub.transform.localPosition;
         golfClubPoseMessage.eulerAngles = golfClub.transform.localEulerAngles;
 
+        cameraPoseMessage.position = magicLeapCamera.transform.position - trackedImage.transform.position;
+        cameraPoseMessage.eulerAngles = magicLeapCamera.transform.eulerAngles - trackedImage.transform.eulerAngles;
+
+
         //Convert to JSON string
         string golfBallPositionJson = JsonUtility.ToJson(golfBallPositionMessage);
         string golfClubPoseJson = JsonUtility.ToJson(golfClubPoseMessage);
+        string cameraPositionJson = JsonUtility.ToJson(cameraPoseMessage);
 
         mqttClientHandler.Publish("MagicPutt/GolfClubPose", golfClubPoseJson);
         mqttClientHandler.Publish("MagicPutt/GolfBallPosition", golfBallPositionJson);
+        mqttClientHandler.Publish("MagicPutt/CameraPose", cameraPositionJson);
     }
 }

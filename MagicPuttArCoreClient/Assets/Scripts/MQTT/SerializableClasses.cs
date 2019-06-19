@@ -12,3 +12,10 @@ public class GolfClubPoseMessage
     public Vector3 position;
     public Vector3 eulerAngles;
 }
+
+[System.Serializable]
+public class MagicLeapCameraPoseMessage
+{
+    public Vector3 position;
+    public Vector3 eulerAngles;
+}
