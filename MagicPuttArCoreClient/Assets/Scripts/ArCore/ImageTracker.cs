@@ -56,7 +56,7 @@ public class ImageTracker : MonoBehaviour
                     m_Visualizers.Remove(image.DatabaseIndex);
                     Destroy(visualizer.gameObject);
                 }
-                if (placeGolfCourseButton.buttonPressed)
+                if (placeGolfCourseButton.buttonPressed && image.TrackingState == TrackingState.Tracking)
                 {
                     //World Anchor
                     Pose pose = image.CenterPose;

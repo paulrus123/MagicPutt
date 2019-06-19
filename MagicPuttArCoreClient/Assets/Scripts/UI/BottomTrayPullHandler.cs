@@ -23,12 +23,12 @@ public class BottomTrayPullHandler : MonoBehaviour, IPointerDownHandler, IPointe
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if(travel > 70)
+        if(travel > 40)
         {
             //OPEN 
             drawer.SetActive(true);
         }
-        else if(travel < -70)
+        else if(travel < -40)
         {
             //CLOSE
             drawer.SetActive(false);
