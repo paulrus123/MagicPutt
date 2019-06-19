@@ -44,9 +44,8 @@ public class ClubPositionEncoder : MonoBehaviour
         golfClubPoseMessage.position = golfClub.transform.localPosition;
         golfClubPoseMessage.eulerAngles = golfClub.transform.localEulerAngles;
 
-        cameraPoseMessage.position = magicLeapCamera.transform.position - trackedImage.transform.position;
-        cameraPoseMessage.eulerAngles = magicLeapCamera.transform.eulerAngles - trackedImage.transform.eulerAngles;
-
+        cameraPoseMessage.position = magicLeapCamera.transform.localPosition;
+        cameraPoseMessage.eulerAngles = magicLeapCamera.transform.localEulerAngles;
 
         //Convert to JSON string
         string golfBallPositionJson = JsonUtility.ToJson(golfBallPositionMessage);

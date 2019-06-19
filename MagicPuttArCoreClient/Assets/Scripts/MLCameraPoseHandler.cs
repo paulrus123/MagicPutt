@@ -5,6 +5,7 @@ using UnityEngine;
 public class MLCameraPoseHandler : MonoBehaviour
 {
     MagicLeapCameraPoseMessage cameraPoseMessage;
+    public GameObject origin;
 
 
     // Start is called before the first frame update
@@ -15,8 +16,11 @@ public class MLCameraPoseHandler : MonoBehaviour
 
     private void Update()
     {
-        transform.localPosition = cameraPoseMessage.position;
-        //transform.localEulerAngles = cameraPoseMessage.eulerAngles;
+        if (cameraPoseMessage != null)
+        {
+            transform.localPosition = cameraPoseMessage.position;
+            //transform.localEulerAngles = cameraPoseMessage.eulerAngles;
+        }
     }
 
     void ReceiveMessage(string msg)
