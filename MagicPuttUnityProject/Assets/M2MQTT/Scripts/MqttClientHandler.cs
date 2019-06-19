@@ -18,6 +18,9 @@ public class MqttClientHandler : MonoBehaviour
     public string brokerHostname = "broker.hivemq.com";
     public int brokerPort = 8000;
 
+    public delegate void PhonePoseReceived(string msg);
+    public static event PhonePoseReceived OnPhonePoseReceived;
+
     // Use this for initialization
     void Start()
     {
@@ -30,6 +33,10 @@ public class MqttClientHandler : MonoBehaviour
 
             Connect();
             client.MqttMsgPublishReceived += client_MqttMsgPublishReceived;
+
+            //Bug in Library - cannot subscribe to multiple topics at once
+            string[] topic1 = new string[] { "MagicPutt/PhonePose" };
+            Subscribe(topic1);
         }
     }
 
@@ -78,15 +85,22 @@ public class MqttClientHandler : MonoBehaviour
             MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE, false);
     }
 
-    public void Subscribe(string topic)
+    public void Subscribe(string[] topics)
     {
         byte[] qosLevels = { MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE };
-        client.Subscribe(new string[] { topic }, qosLevels);
+        client.Subscribe(topics, qosLevels);
     }
 
     void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e)
     {
-        string msg = System.Text.Encoding.UTF8.GetString(e.Message);
-        Debug.Log("Received message from " + e.Topic + " : " + msg);
+        switch (e.Topic)
+        {
+            case "MagicPutt/PhonePose":
+                if (OnPhonePoseReceived != null)
+                    OnPhonePoseReceived(System.Text.Encoding.UTF8.GetString(e.Message));
+                break;
+            default:
+                break;
+        }
     }
 }
