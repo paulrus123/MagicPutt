@@ -7,12 +7,8 @@ public class ExitButtonHanlder : MonoBehaviour
     [SerializeField]
     UIHandlerMain uiHandler = default;
 
-    [SerializeField]
-    ImageTracker imageTracker = default;
-
     public void ButtonPressed()
     {
-        imageTracker.SetTrackingOff();
         uiHandler.SetState(UIHandlerMain.UIState.MAIN);
     }
 }

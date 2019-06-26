@@ -13,6 +13,9 @@ public class UIHandlerMain : MonoBehaviour
     [SerializeField]
     GameObject PlaceCourseCanvas = default;
 
+    [SerializeField]
+    ImageTracker imageTracker = default;
+
     public enum UIState { MAIN, INFO, PLACECOURSE};
     public UIState uiState;
 
@@ -33,8 +36,10 @@ public class UIHandlerMain : MonoBehaviour
                 MainScreenCanvas.SetActive(true);
                 InfoScreenCanvas.SetActive(false);
                 PlaceCourseCanvas.SetActive(false);
+                imageTracker.SetTrackingOff();
                 break;
             case UIState.INFO:
+                imageTracker.SetTrackingOff();
                 MainScreenCanvas.SetActive(false);
                 InfoScreenCanvas.SetActive(true);
                 PlaceCourseCanvas.SetActive(false);
@@ -43,8 +48,13 @@ public class UIHandlerMain : MonoBehaviour
                 MainScreenCanvas.SetActive(false);
                 InfoScreenCanvas.SetActive(false);
                 PlaceCourseCanvas.SetActive(true);
+                imageTracker.SetTrackingOn();
                 break;
             default:
+                MainScreenCanvas.SetActive(true);
+                InfoScreenCanvas.SetActive(false);
+                PlaceCourseCanvas.SetActive(false);
+                imageTracker.SetTrackingOff();
                 break;
         }
     }
