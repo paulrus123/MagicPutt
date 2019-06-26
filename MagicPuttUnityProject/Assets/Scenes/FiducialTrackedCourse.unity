@@ -589,7 +589,8 @@ GameObject:
   - component: {fileID: 356960010}
   - component: {fileID: 356960009}
   - component: {fileID: 356960008}
-  m_Layer: 0
+  - component: {fileID: 356960011}
+  m_Layer: 11
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,6 +670,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 356960006}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &356960011
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356960006}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &476923607
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +698,8 @@ GameObject:
   - component: {fileID: 476923611}
   - component: {fileID: 476923610}
   - component: {fileID: 476923609}
-  m_Layer: 0
+  - component: {fileID: 476923612}
+  m_Layer: 11
   m_Name: Ground (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -761,6 +779,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476923607}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &476923612
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476923607}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &503272655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,7 +1160,7 @@ GameObject:
   - component: {fileID: 841328046}
   - component: {fileID: 841328045}
   - component: {fileID: 841328044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2135,7 +2169,8 @@ GameObject:
   - component: {fileID: 1296924290}
   - component: {fileID: 1296924289}
   - component: {fileID: 1296924288}
-  m_Layer: 0
+  - component: {fileID: 1296924291}
+  m_Layer: 11
   m_Name: Ground (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2215,6 +2250,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296924286}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1296924291
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1296924286}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &1338417872
 GameObject:
   m_ObjectHideFlags: 0

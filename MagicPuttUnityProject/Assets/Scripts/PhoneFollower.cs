@@ -9,6 +9,7 @@ public class PhoneFollower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pose = new PhonePoseMessage();
         MqttClientHandler.OnPhonePoseReceived += MqttClientHandler_OnPhonePoseReceived;
     }
 

@@ -12,7 +12,7 @@ public class ClubHeadFollower : MonoBehaviour
     ClubHeadSpawner _spawner;
     Rigidbody _rigidbody;
     Vector3 _velocity;
-
+    
     [SerializeField]
     private float sensitivity = 100f;
 
