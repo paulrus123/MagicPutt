@@ -15,7 +15,7 @@ public class ImageTracker : MonoBehaviour
 
     private List<AugmentedImage> m_TempAugmentedImages = new List<AugmentedImage>();
 
-    bool shouldTrack = true;
+    bool shouldTrack = false;
 
     [SerializeField]
     MyButtonHandler placeGolfCourseButton = default;
@@ -25,9 +25,14 @@ public class ImageTracker : MonoBehaviour
         GolfCourse.SetActive(false);
     }
 
-    public void ToggleTracking()
+    public void SetTrackingOn()
     {
-        shouldTrack = !shouldTrack;
+        shouldTrack = true;
+    }
+
+    public void SetTrackingOff()
+    {
+        shouldTrack = false;
     }
 
     // Update is called once per frame
