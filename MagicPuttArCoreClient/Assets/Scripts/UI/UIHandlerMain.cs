@@ -19,14 +19,14 @@ public class UIHandlerMain : MonoBehaviour
     [SerializeField]
     ImageTracker imageTracker = default;
 
-    public enum UIState { MAIN, INFO, PLACECOURSE,SCORECARD};
+    public enum UIState { MAIN, INFO, PLACECOURSE, SCORECARD};
     public UIState uiState;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        SetState(UIState.MAIN);
+        SetState(UIState.PLACECOURSE);
     }
 
     public void SetState(UIState newState)
