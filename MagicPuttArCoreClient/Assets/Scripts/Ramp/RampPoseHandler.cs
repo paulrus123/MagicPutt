@@ -10,6 +10,12 @@ public class RampPoseHandler : MonoBehaviour
     [SerializeField]
     GameObject rampObject = default;
 
+    [SerializeField]
+    GameObject rampObjectSelectable = default;
+
+    [SerializeField]
+    CameraRaycast cameraRaycast;
+
     MeshRenderer mesh;
 
     // Start is called before the first frame update
@@ -29,5 +35,7 @@ public class RampPoseHandler : MonoBehaviour
         rampObject.SetActive(rampPoseMsg.isPlaced);
         rampObject.transform.localPosition = rampPoseMsg.position;
         rampObject.transform.localEulerAngles = rampPoseMsg.eulerAngles;
+
+        rampObjectSelectable.SetActive(cameraRaycast.RaycastHitObjectType == CameraRaycast.ObjectType.RAMP ? true : false);
     }
 }

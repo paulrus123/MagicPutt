@@ -6,6 +6,8 @@ public class MQTTEncoder : MonoBehaviour
     
     public MqttClientHandler mqttClientHandler;
 
+    public RampInventoryHandler rampInventoryHandler;
+
     PhonePoseMessage phonePoseMessage;
 
     float currTime;
@@ -36,7 +38,10 @@ public class MQTTEncoder : MonoBehaviour
 
         //Convert to JSON string
         string phonePoseJson = JsonUtility.ToJson(phonePoseMessage);
+        string rampRequestJson = JsonUtility.ToJson(rampInventoryHandler.rampRequestMsg);
 
+        //PublishJson
         mqttClientHandler.Publish("MagicPutt/PhonePose", phonePoseJson);
+        mqttClientHandler.Publish("MagicPutt/RampRequest", rampRequestJson);
     }
 }
