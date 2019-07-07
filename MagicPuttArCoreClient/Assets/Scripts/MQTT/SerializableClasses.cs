@@ -26,3 +26,25 @@ public class PhonePoseMessage
     public Vector3 position;
     public Vector3 eulerAngles;
 }
+
+//Published by MagicLeap
+[System.Serializable]
+public class RampPose
+{
+    public int index; //index of the ramp (if multiple)
+    public bool isPlaced; //if false then ramp is not on game area (e.g. in players possesion)
+    public Vector3 position;
+    public Vector3 eulerAngles;
+}
+
+
+//Published by phone
+[System.Serializable]
+public class RampRequest
+{
+    public int index = 0; //index of the ramp
+    public bool requestPickup = false;
+    public bool requestPlacement = false;
+    public Vector3 position;
+    public Vector3 eulerAngles;
+}

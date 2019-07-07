@@ -27,6 +27,9 @@ public class MqttClientHandler : MonoBehaviour
     public delegate void CameraPoseReceived(string msg);
     public static event CameraPoseReceived OnCameraPoseReceived;
 
+    public delegate void RampPoseRecieved(string msg);
+    public static event RampPoseRecieved OnRampPoseRecieved;
+
     // Use this for initialization
     void Start()
     {
@@ -44,9 +47,11 @@ public class MqttClientHandler : MonoBehaviour
             string[] topic1 = new string[] { "MagicPutt/GolfClubPose" };
             string[] topic2 = new string[] { "MagicPutt/GolfBallPosition" };
             string[] topic3 = new string[] { "MagicPutt/CameraPose" };
+            string[] topic4 = new string[] { "MagicPutt/RampPose" };
             Subscribe(topic1);
             Subscribe(topic2);
             Subscribe(topic3);
+            Subscribe(topic4);
 
         }
     }
@@ -117,6 +122,10 @@ public class MqttClientHandler : MonoBehaviour
             case "MagicPutt/CameraPose":
                 if (OnCameraPoseReceived != null)
                     OnCameraPoseReceived(System.Text.Encoding.UTF8.GetString(e.Message));
+                break;
+            case "MagicPutt/RampPose":
+                if (OnRampPoseRecieved != null)
+                    OnRampPoseRecieved(System.Text.Encoding.UTF8.GetString(e.Message));
                 break;
             default:
                 break;
