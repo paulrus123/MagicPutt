@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class RampInventoryHandler : MonoBehaviour
 {
+    [SerializeField]
+    Transform rampPrefabTransform = default;
+
     public RampRequest rampRequestMsg;
     RampPose rampPoseMsg;
 
@@ -30,13 +33,14 @@ public class RampInventoryHandler : MonoBehaviour
     //If ramp is in inventory, then place it
     public bool TryPlaceRamp()
     {
-        if (!isInInventory)
+        if (!isInInventory || (cameraRaycast.RaycastHitObjectType != CameraRaycast.ObjectType.PLACEABLESURFACE))
         {
-            Debug.Log("No inventory to place");
+            Debug.Log("No inventory to place or no surface to place on");
             return false;
         }
         else
         {
+            rampRequestMsg.position = rampPrefabTransform.InverseTransformPoint(cameraRaycast.hitPoint);
             ChangeState(States.REQUESTING_PLACEMENT);
             return true;
         }
@@ -93,8 +97,13 @@ public class RampInventoryHandler : MonoBehaviour
                     rampRequestMsg.requestPlacement = true;
                     break;
                 case States.PICKED_UP:
+                    isInInventory = true;
+                    rampRequestMsg.requestPickup = false;
+                    rampRequestMsg.requestPlacement = false;
+                    break;
                 case States.RAMP_PLACED:
                 default:
+                    isInInventory = false;
                     rampRequestMsg.requestPickup = false;
                     rampRequestMsg.requestPlacement = false;
                     break;

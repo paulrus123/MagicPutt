@@ -7,8 +7,10 @@ public class CameraRaycast : MonoBehaviour
     [SerializeField]
     float maxRayDistance = 2.0f;
 
-    public enum ObjectType {RAMP, NOTHING };
+    public enum ObjectType {RAMP, NOTHING,PLACEABLESURFACE };
     public ObjectType RaycastHitObjectType;
+
+    public Vector3 hitPoint;
 
 
     // Start is called before the first frame update
@@ -20,18 +22,21 @@ public class CameraRaycast : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Only hit layer 8
-        int layermask = 1 << 8;
-        layermask = -layermask;
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRayDistance, layermask)) 
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRayDistance)) 
         {
             if(hit.collider.tag == "Ramp")
             {
                 RaycastHitObjectType = ObjectType.RAMP;
                 return;
             }
+            else if(hit.collider.tag == "PlaceableSurface")
+            {
+                RaycastHitObjectType = ObjectType.PLACEABLESURFACE;
+                return;
+            }
+            hitPoint = hit.point;
         }
         RaycastHitObjectType = ObjectType.NOTHING;
     }

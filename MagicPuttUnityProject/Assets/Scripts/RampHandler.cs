@@ -20,6 +20,8 @@ public class RampHandler : MonoBehaviour
     void Start()
     {
         rampRequestMsg = new RampRequest();
+
+        MqttClientHandler.OnRampRequestRecieved += OnReceiveRampRequest;
     }
 
     // Update is called once per frame

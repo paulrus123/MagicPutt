@@ -21,6 +21,9 @@ public class MqttClientHandler : MonoBehaviour
     public delegate void PhonePoseReceived(string msg);
     public static event PhonePoseReceived OnPhonePoseReceived;
 
+    public delegate void RampRequestRecieved(string msg);
+    public static event RampRequestRecieved OnRampRequestRecieved;
+
     // Use this for initialization
     void Start()
     {
@@ -36,7 +39,9 @@ public class MqttClientHandler : MonoBehaviour
 
             //Bug in Library - cannot subscribe to multiple topics at once
             string[] topic1 = new string[] { "MagicPutt/PhonePose" };
+            string[] topic2 = new string[] { "MagicPutt/RampRequest" };
             Subscribe(topic1);
+            Subscribe(topic2);
         }
     }
 
@@ -98,6 +103,11 @@ public class MqttClientHandler : MonoBehaviour
             case "MagicPutt/PhonePose":
                 if (OnPhonePoseReceived != null)
                     OnPhonePoseReceived(System.Text.Encoding.UTF8.GetString(e.Message));
+                break;
+
+            case "MagicPutt/RampRequest":
+                if (OnRampRequestRecieved != null)
+                    OnRampRequestRecieved(System.Text.Encoding.UTF8.GetString(e.Message));
                 break;
             default:
                 break;

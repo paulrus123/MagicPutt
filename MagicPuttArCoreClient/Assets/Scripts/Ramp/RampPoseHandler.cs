@@ -14,7 +14,7 @@ public class RampPoseHandler : MonoBehaviour
     GameObject rampObjectSelectable = default;
 
     [SerializeField]
-    CameraRaycast cameraRaycast;
+    CameraRaycast cameraRaycast = default;
 
     MeshRenderer mesh;
 
