@@ -17,6 +17,9 @@ public class RampInventoryHandler : MonoBehaviour
     [SerializeField]
     CameraRaycast cameraRaycast = default;
 
+    [SerializeField]
+    InventorySelectionHandler inventorySelectionHandler = default;
+
     bool isInInventory = false;
 
     public enum States { RAMP_PLACED, REQUESTING_PICKUP, PICKED_UP,REQUESTING_PLACEMENT};
@@ -103,6 +106,7 @@ public class RampInventoryHandler : MonoBehaviour
                     break;
                 case States.RAMP_PLACED:
                 default:
+                    inventorySelectionHandler.SetInventoryTypeHand();
                     isInInventory = false;
                     rampRequestMsg.requestPickup = false;
                     rampRequestMsg.requestPlacement = false;

@@ -6,16 +6,22 @@ public class DebugHitPointShows : MonoBehaviour
 {
 
     public CameraRaycast cameraRaycast;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public InventorySelectionHandler inventorySelectionHandler;
+    public GameObject renderedObject;
+    public GameObject golfCourse;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = cameraRaycast.hitPoint;
+        if(inventorySelectionHandler.currentInventoryType == InventorySelectionHandler.InventoryTypes.RAMP)
+        {
+            renderedObject.SetActive(true);
+            transform.position = cameraRaycast.hitPoint;
+            transform.eulerAngles = golfCourse.transform.eulerAngles;
+        }
+        else
+        {
+            renderedObject.SetActive(false);
+        }
     }
 }
