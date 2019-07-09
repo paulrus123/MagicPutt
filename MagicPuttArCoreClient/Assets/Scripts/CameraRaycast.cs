@@ -26,7 +26,8 @@ public class CameraRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRayDistance)) 
         {
-            if(hit.collider.tag == "Ramp")
+            hitPoint = hit.point;
+            if (hit.collider.tag == "Ramp")
             {
                 RaycastHitObjectType = ObjectType.RAMP;
                 return;
@@ -36,7 +37,6 @@ public class CameraRaycast : MonoBehaviour
                 RaycastHitObjectType = ObjectType.PLACEABLESURFACE;
                 return;
             }
-            hitPoint = hit.point;
         }
         RaycastHitObjectType = ObjectType.NOTHING;
     }
