@@ -15,6 +15,12 @@ public class RampInventoryHandler : MonoBehaviour
     Button rampButton = default;
 
     [SerializeField]
+    GameObject rampObject = default;
+
+    [SerializeField]
+    GameObject rampAnimationObject = default;
+
+    [SerializeField]
     CameraRaycast cameraRaycast = default;
 
     [SerializeField]
@@ -108,18 +114,23 @@ public class RampInventoryHandler : MonoBehaviour
                 case States.REQUESTING_PICKUP:
                     rampRequestMsg.requestPickup = true;
                     rampRequestMsg.requestPlacement = false;
+                    rampAnimationObject.SetActive(true);
+                    rampObject.SetActive(false);
                     break;
                 case States.REQUESTING_PLACEMENT:
-                    rampRequestMsg.requestPickup = false;
                     rampRequestMsg.requestPlacement = true;
+                    rampAnimationObject.SetActive(false);
+                    rampObject.SetActive(false);
                     break;
                 case States.PICKED_UP:
                     isInInventory = true;
                     rampRequestMsg.requestPickup = false;
                     rampRequestMsg.requestPlacement = false;
+                    rampObject.SetActive(false);
                     break;
                 case States.RAMP_PLACED:
                 default:
+                    rampObject.SetActive(true);
                     inventorySelectionHandler.SetInventoryTypeHand();
                     isInInventory = false;
                     rampRequestMsg.requestPickup = false;
