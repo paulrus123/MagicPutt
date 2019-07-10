@@ -31,8 +31,8 @@ public class ClubHeadFollower : MonoBehaviour
 
         _velocity = (destination - _rigidbody.transform.position) * sensitivity;
 
-        //scale velocity to the max sqr velocity
-        if(_velocity.sqrMagnitude > maxSqrVelocity)
+        //scale velocity to the max sqr velocity. use sqrVecloty instead of magnitude for better performance (https://docs.unity3d.com/ScriptReference/Vector3-sqrMagnitude.html) 
+        if (_velocity.sqrMagnitude > maxSqrVelocity)
         {
             _velocity = _velocity * Mathf.Sqrt(maxSqrVelocity / _velocity.sqrMagnitude);
         }

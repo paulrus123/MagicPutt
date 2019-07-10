@@ -43,7 +43,6 @@ public class GridCreator : MonoBehaviour
                 cell.GetComponent<Cell>().zIndex = j;
                 cell.transform.localScale = cellScale;
 
-
                 cell.transform.localPosition = cellPosition;
             }
         }
