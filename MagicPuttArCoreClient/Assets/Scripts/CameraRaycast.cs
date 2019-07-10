@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraRaycast : MonoBehaviour
 {
     [SerializeField]
-    float maxRayDistance = 2.0f;
+    float maxRayDistance = 10.0f;
 
     public enum ObjectType {RAMP, NOTHING,PLACEABLESURFACE };
     public ObjectType RaycastHitObjectType;

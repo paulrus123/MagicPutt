@@ -22,7 +22,7 @@ public class RampInventoryHandler : MonoBehaviour
 
     bool isInInventory = false;
 
-    public enum States { RAMP_PLACED, REQUESTING_PICKUP, PICKED_UP,REQUESTING_PLACEMENT};
+    public enum States { RAMP_PLACED, REQUESTING_PICKUP, PICKED_UP, REQUESTING_PLACEMENT};
     public States state;
 
     private void Start()
@@ -53,6 +53,20 @@ public class RampInventoryHandler : MonoBehaviour
     public bool TryPickupRamp()
     {
         if ((isInInventory) || (cameraRaycast.RaycastHitObjectType != CameraRaycast.ObjectType.RAMP))
+        {
+            return false;
+        }
+        else
+        {
+            ChangeState(States.REQUESTING_PICKUP);
+            return true;
+        }
+    }
+
+    //If ramp is not already in the inventory and the touch point is raycasting at the ramp, then pick it up
+    public bool TryPickupRampFromTouch()
+    {
+        if (isInInventory)
         {
             return false;
         }

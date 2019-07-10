@@ -12,9 +12,12 @@ public class ClubHeadFollower : MonoBehaviour
     ClubHeadSpawner _spawner;
     Rigidbody _rigidbody;
     Vector3 _velocity;
-    
+
     [SerializeField]
-    private float sensitivity = 100f;
+    private float sensitivity = 50f;
+
+    [SerializeField]
+    private float maxSqrVelocity = 20f;
 
     void Awake()
     {
@@ -27,6 +30,12 @@ public class ClubHeadFollower : MonoBehaviour
         _rigidbody.transform.rotation = transform.rotation;
 
         _velocity = (destination - _rigidbody.transform.position) * sensitivity;
+
+        //scale velocity to the max sqr velocity
+        if(_velocity.sqrMagnitude > maxSqrVelocity)
+        {
+            _velocity = _velocity * Mathf.Sqrt(maxSqrVelocity / _velocity.sqrMagnitude);
+        }
 
         _rigidbody.velocity = _velocity;
         transform.rotation = _spawner.transform.rotation;

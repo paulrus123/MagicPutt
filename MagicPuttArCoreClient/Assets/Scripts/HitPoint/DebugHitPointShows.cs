@@ -13,8 +13,9 @@ public class DebugHitPointShows : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inventorySelectionHandler.currentInventoryType == InventorySelectionHandler.InventoryTypes.RAMP)
+        if((inventorySelectionHandler.currentInventoryType == InventorySelectionHandler.InventoryTypes.RAMP) && (cameraRaycast.RaycastHitObjectType == CameraRaycast.ObjectType.PLACEABLESURFACE))
         {
+
             renderedObject.SetActive(true);
             transform.position = cameraRaycast.hitPoint;
             transform.eulerAngles = golfCourse.transform.eulerAngles;

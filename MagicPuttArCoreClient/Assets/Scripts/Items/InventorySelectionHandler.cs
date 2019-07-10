@@ -18,6 +18,9 @@ public class InventorySelectionHandler : MonoBehaviour
     [SerializeField]
     Image mainButtonImage = default;
 
+    [SerializeField]
+    Text mainButtonText = default;
+
     //Not available text and icon
     [SerializeField]
     GameObject noActionAvailableIcon = default;
@@ -33,13 +36,15 @@ public class InventorySelectionHandler : MonoBehaviour
     {
         currentInventoryType = InventoryTypes.HAND;
         mainButtonImage.sprite = handIcon;
+        mainButtonText.text = "Touch objects to pick up or interact with it";
     }
 
     public void SetInventoryTypeRamp()
     {
         currentInventoryType = InventoryTypes.RAMP;
         mainButtonImage.sprite = rampIcon;
-    }
+        mainButtonText.text = "Press the ramp button to place a ramp";
+    }   
 
     public void MainButtonClicked()
     {
@@ -61,6 +66,7 @@ public class InventorySelectionHandler : MonoBehaviour
                 break;
         }
     }
+
 
     void HandClicked()
     {
