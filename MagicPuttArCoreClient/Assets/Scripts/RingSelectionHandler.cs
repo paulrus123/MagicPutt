@@ -26,11 +26,11 @@ public class RingSelectionHandler : MonoBehaviour
     public enum States { OFF, TURNING_ON, ON, TURNING_OFF};
     public States state;
 
-    private void Start()
+    private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
         currentScale = minScale;
-        localScale = new Vector3(currentScale , currentScale, currentScale);
+        localScale = new Vector3(currentScale, currentScale, currentScale);
         SetState(States.OFF);
     }
 
