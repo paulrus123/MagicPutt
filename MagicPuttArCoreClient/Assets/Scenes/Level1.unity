@@ -1282,7 +1282,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 596b96ff933784acaa3e2570877c6003, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fceea00d7fd244ce8b8933c5eec671fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2383,6 +2383,36 @@ PrefabInstance:
       propertyPath: phone
       value: 
       objectReference: {fileID: 2034700355}
+    - target: {fileID: 8129762933606474654, guid: e8f02e685d8a341b6b21d038a9098cab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053017494764256331, guid: e8f02e685d8a341b6b21d038a9098cab,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053017494764256331, guid: e8f02e685d8a341b6b21d038a9098cab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053017494764256331, guid: e8f02e685d8a341b6b21d038a9098cab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053017494764256331, guid: e8f02e685d8a341b6b21d038a9098cab,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5053017494764256331, guid: e8f02e685d8a341b6b21d038a9098cab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.97
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6266952764632344579, guid: e8f02e685d8a341b6b21d038a9098cab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e8f02e685d8a341b6b21d038a9098cab, type: 3}
@@ -2946,7 +2976,7 @@ GameObject:
   - component: {fileID: 819033932}
   - component: {fileID: 819033931}
   m_Layer: 5
-  m_Name: Text
+  m_Name: PlaceCourseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2984,7 +3014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3235,7 +3265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4179,7 +4209,6 @@ MonoBehaviour:
   rampObject: {fileID: 6178600125620990495}
   rampAnimationObject: {fileID: 7286540301489363810}
   cameraRaycast: {fileID: 2034700356}
-  inventorySelectionHandler: {fileID: 1430716565}
   state: 0
 --- !u!1 &1087309877
 GameObject:
@@ -4653,7 +4682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.85490197}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.627451}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5626,7 +5655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentInventoryType: 0
   rampInventoryHandler: {fileID: 1078803536}
-  handIcon: {fileID: 21300000, guid: 461ea0b9dba0b488885d1a9c8b158698, type: 3}
+  handIcon: {fileID: 21300000, guid: fceea00d7fd244ce8b8933c5eec671fd, type: 3}
   rampIcon: {fileID: 21300000, guid: 11358cad46fb64bb096fc1cc95a35974, type: 3}
   mainButtonImage: {fileID: 275057222}
   mainButtonText: {fileID: 607510494}
@@ -7115,7 +7144,7 @@ GameObject:
   - component: {fileID: 1883304666}
   - component: {fileID: 1883304665}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: DoneText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7153,7 +7182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8262,6 +8291,11 @@ PrefabInstance:
       propertyPath: rampObject
       value: 
       objectReference: {fileID: 6178600125620990495}
+    - target: {fileID: 4091475210082404339, guid: 412c97e8d5cc642109d52ef1216d6e6f,
+        type: 3}
+      propertyPath: inventorySelectionHandler
+      value: 
+      objectReference: {fileID: 1430716565}
     - target: {fileID: 5585055180778407619, guid: 412c97e8d5cc642109d52ef1216d6e6f,
         type: 3}
       propertyPath: m_Enabled

@@ -11,13 +11,13 @@ public class RampPoseHandler : MonoBehaviour
     GameObject rampPlacement = default;
 
     [SerializeField]
-    GameObject rampObject = default;
-
-    [SerializeField]
     RingSelectionHandler ringSelection = default;
 
     [SerializeField]
     CameraRaycast cameraRaycast = default;
+
+    [SerializeField]
+    InventorySelectionHandler inventorySelectionHandler = default;
 
     MeshRenderer mesh;
 
@@ -38,7 +38,7 @@ public class RampPoseHandler : MonoBehaviour
         rampPlacement.transform.localPosition = rampPoseMsg.position;
         rampPlacement.transform.localEulerAngles = rampPoseMsg.eulerAngles;
 
-        if(cameraRaycast.RaycastHitObjectType == CameraRaycast.ObjectType.RAMP)
+        if((cameraRaycast.RaycastHitObjectType == CameraRaycast.ObjectType.RAMP) && (inventorySelectionHandler.currentInventoryType == InventorySelectionHandler.InventoryTypes.HAND))
         {
             ringSelection.TurnOn();
         }

@@ -9,6 +9,7 @@ public class RampAnimation : MonoBehaviour
     private void OnEnable()
     {
         rampAnimator = GetComponent<Animator>();
+        rampAnimator.speed = 1.6f;
         rampAnimator.Play("RampPickedUp");
     }
 

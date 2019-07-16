@@ -23,10 +23,10 @@ public class RampInventoryHandler : MonoBehaviour
     [SerializeField]
     CameraRaycast cameraRaycast = default;
 
-    [SerializeField]
-    InventorySelectionHandler inventorySelectionHandler = default;
-
     bool isInInventory = false;
+
+
+    bool dirtyFlag = true; //If dirtyFlag == true then need to redo a SetActive()
 
     public enum States { RAMP_PLACED, REQUESTING_PICKUP, PICKED_UP, REQUESTING_PLACEMENT};
     public States state;
@@ -108,7 +108,15 @@ public class RampInventoryHandler : MonoBehaviour
     {
         if(newState != state)
         {
+            dirtyFlag = true; //set flag=true for GUI thread to update on next render 
             state = newState;
+        }
+    }
+
+    private void Update()
+    {
+        if(dirtyFlag)
+        {
             switch (state)
             {
                 case States.REQUESTING_PICKUP:
@@ -131,16 +139,14 @@ public class RampInventoryHandler : MonoBehaviour
                 case States.RAMP_PLACED:
                 default:
                     rampObject.SetActive(true);
-                    inventorySelectionHandler.SetInventoryTypeHand();
                     isInInventory = false;
                     rampRequestMsg.requestPickup = false;
                     rampRequestMsg.requestPlacement = false;
                     break;
             }
-
             //If no ramps in inventory then don't let user select ramp icon
             rampButton.interactable = isInInventory;
-
+            dirtyFlag = false;
         }
     }
 }
