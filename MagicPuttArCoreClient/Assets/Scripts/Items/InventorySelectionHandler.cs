@@ -29,6 +29,9 @@ public class InventorySelectionHandler : MonoBehaviour
     [SerializeField]
     Sprite rampIcon = default;
 
+    [SerializeField]
+    GameObject hitPoint = default;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +42,6 @@ public class InventorySelectionHandler : MonoBehaviour
     public void SetInventoryTypeHand()
     {
         currentInventoryType = InventoryTypes.HAND;
-        rotateButton.SetActive(false);
         mainButtonImage.sprite = handIcon;
         mainButtonText.text = "Touch objects to pick up or interact with it";
     }
@@ -47,7 +49,6 @@ public class InventorySelectionHandler : MonoBehaviour
     public void SetInventoryTypeRamp()
     {
         currentInventoryType = InventoryTypes.RAMP;
-        rotateButton.SetActive(true);
         mainButtonImage.sprite = rampIcon;
         mainButtonText.text = "Press the ramp button to place a ramp";
     }   
@@ -70,6 +71,20 @@ public class InventorySelectionHandler : MonoBehaviour
                 break;
             default:
                 break;
+        }
+    }
+
+    private void Update()
+    {
+        if((currentInventoryType == InventoryTypes.RAMP) && (rampInventoryHandler.isInInventory))
+        {
+            rotateButton.SetActive(true);
+            hitPoint.SetActive(true);
+        }
+        else
+        {
+            rotateButton.SetActive(false);
+            hitPoint.SetActive(false);
         }
     }
 

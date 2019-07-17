@@ -1911,6 +1911,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408979587}
   m_CullTransparentMesh: 0
+--- !u!1 &421534748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5753668012153079726, guid: f30644078e0ce4ddd944a46c0d40ee01,
+    type: 3}
+  m_PrefabInstance: {fileID: 5753668011874900436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &421534750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5753668012153079723, guid: f30644078e0ce4ddd944a46c0d40ee01,
@@ -4360,6 +4366,7 @@ MonoBehaviour:
   rampObject: {fileID: 6178600125620990495}
   rampAnimationObject: {fileID: 7286540301489363810}
   cameraRaycast: {fileID: 2034700356}
+  isInInventory: 0
   state: 0
 --- !u!1 &1087309877
 GameObject:
@@ -5891,6 +5898,7 @@ MonoBehaviour:
   mainButtonText: {fileID: 607510494}
   handIcon: {fileID: 21300000, guid: fceea00d7fd244ce8b8933c5eec671fd, type: 3}
   rampIcon: {fileID: 21300000, guid: 11358cad46fb64bb096fc1cc95a35974, type: 3}
+  hitPoint: {fileID: 421534748}
 --- !u!1 &1445131416
 GameObject:
   m_ObjectHideFlags: 0

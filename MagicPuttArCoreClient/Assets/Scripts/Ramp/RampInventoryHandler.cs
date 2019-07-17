@@ -23,7 +23,7 @@ public class RampInventoryHandler : MonoBehaviour
     [SerializeField]
     CameraRaycast cameraRaycast = default;
 
-    bool isInInventory = false;
+    public bool isInInventory = false;
 
     float rampRotation = 0;
     bool dirtyFlag = true; //If dirtyFlag == true then need to redo a SetActive()
