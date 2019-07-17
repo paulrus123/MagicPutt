@@ -19,12 +19,9 @@ public class RampPoseHandler : MonoBehaviour
     [SerializeField]
     InventorySelectionHandler inventorySelectionHandler = default;
 
-<<<<<<< HEAD
-=======
     [SerializeField]
     UIHandlerMain uIHandlerMain = default;
 
->>>>>>> Bugfixes: selectable icon only appear on hand, ball renders above ground plane, change size of occlusion area
     MeshRenderer mesh;
 
     // Start is called before the first frame update
@@ -44,13 +41,9 @@ public class RampPoseHandler : MonoBehaviour
         rampPlacement.transform.localPosition = rampPoseMsg.position;
         rampPlacement.transform.localEulerAngles = rampPoseMsg.eulerAngles;
 
-<<<<<<< HEAD
-        if((cameraRaycast.RaycastHitObjectType == CameraRaycast.ObjectType.RAMP) && (inventorySelectionHandler.currentInventoryType == InventorySelectionHandler.InventoryTypes.HAND))
-=======
         if((cameraRaycast.RaycastHitObjectType == CameraRaycast.ObjectType.RAMP) 
             && (inventorySelectionHandler.currentInventoryType == InventorySelectionHandler.InventoryTypes.HAND)
             && (uIHandlerMain.uiState == UIHandlerMain.UIState.MAIN))
->>>>>>> Bugfixes: selectable icon only appear on hand, ball renders above ground plane, change size of occlusion area
         {
             ringSelection.TurnOn();
         }

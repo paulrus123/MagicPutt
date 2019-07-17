@@ -25,11 +25,7 @@ public class RampInventoryHandler : MonoBehaviour
 
     bool isInInventory = false;
 
-<<<<<<< HEAD
-=======
     float rampRotation = 0;
->>>>>>> Bugfixes: selectable icon only appear on hand, ball renders above ground plane, change size of occlusion area
-
     bool dirtyFlag = true; //If dirtyFlag == true then need to redo a SetActive()
 
     public enum States { RAMP_PLACED, REQUESTING_PICKUP, PICKED_UP, REQUESTING_PLACEMENT};
