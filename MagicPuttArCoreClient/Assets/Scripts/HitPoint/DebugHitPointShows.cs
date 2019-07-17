@@ -9,6 +9,7 @@ public class DebugHitPointShows : MonoBehaviour
     public InventorySelectionHandler inventorySelectionHandler;
     public GameObject renderedObject;
     public GameObject golfCourse;
+    public RampInventoryHandler rampInventoryHandler;
 
     // Update is called once per frame
     void Update()
@@ -18,7 +19,7 @@ public class DebugHitPointShows : MonoBehaviour
 
             renderedObject.SetActive(true);
             transform.position = cameraRaycast.hitPoint;
-            transform.eulerAngles = golfCourse.transform.eulerAngles;
+            transform.localEulerAngles = rampInventoryHandler.rampRequestMsg.eulerAngles;
         }
         else
         {

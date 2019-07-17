@@ -25,6 +25,10 @@ public class RampInventoryHandler : MonoBehaviour
 
     bool isInInventory = false;
 
+<<<<<<< HEAD
+=======
+    float rampRotation = 0;
+>>>>>>> Bugfixes: selectable icon only appear on hand, ball renders above ground plane, change size of occlusion area
 
     bool dirtyFlag = true; //If dirtyFlag == true then need to redo a SetActive()
 
@@ -37,6 +41,16 @@ public class RampInventoryHandler : MonoBehaviour
         rampPoseMsg = new RampPose();
         rampRequestMsg = new RampRequest();
         MqttClientHandler.OnRampPoseRecieved += ReceiveRampPose;
+    }
+
+    public void RotateRamp()
+    {
+        rampRotation += 90f;
+        if(rampRotation >= 360f)
+        {
+            rampRotation -= 360f;
+        }
+        rampRequestMsg.eulerAngles.y = rampRotation;
     }
 
     //If ramp is in inventory, then place it
@@ -78,6 +92,8 @@ public class RampInventoryHandler : MonoBehaviour
         }
         else
         {
+            rampRequestMsg.eulerAngles = rampPoseMsg.eulerAngles;
+            rampRotation = rampPoseMsg.eulerAngles.y;
             ChangeState(States.REQUESTING_PICKUP);
             return true;
         }
