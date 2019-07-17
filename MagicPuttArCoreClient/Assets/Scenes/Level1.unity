@@ -5885,11 +5885,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentInventoryType: 0
   rampInventoryHandler: {fileID: 1078803536}
-<<<<<<< HEAD
-  handIcon: {fileID: 21300000, guid: fceea00d7fd244ce8b8933c5eec671fd, type: 3}
-  rampIcon: {fileID: 21300000, guid: 11358cad46fb64bb096fc1cc95a35974, type: 3}
-=======
->>>>>>> Bugfixes: selectable icon only appear on hand, ball renders above ground plane, change size of occlusion area
   mainButtonImage: {fileID: 275057222}
   rotateButton: {fileID: 396522605}
   noActionAvailableIcon: {fileID: 425747402}
@@ -8618,14 +8613,11 @@ PrefabInstance:
       propertyPath: inventorySelectionHandler
       value: 
       objectReference: {fileID: 1430716565}
-<<<<<<< HEAD
-=======
     - target: {fileID: 4091475210082404339, guid: 412c97e8d5cc642109d52ef1216d6e6f,
         type: 3}
       propertyPath: uIHandlerMain
       value: 
       objectReference: {fileID: 922800165}
->>>>>>> Bugfixes: selectable icon only appear on hand, ball renders above ground plane, change size of occlusion area
     - target: {fileID: 5585055180778407619, guid: 412c97e8d5cc642109d52ef1216d6e6f,
         type: 3}
       propertyPath: m_Enabled
