@@ -48,3 +48,17 @@ public class RampRequest
     public Vector3 position;
     public Vector3 eulerAngles;
 }
+
+[System.Serializable]
+public class ScoresMessage
+{
+    public ScoresMessage()
+    {
+        pars = new int[numberOfHoles];
+        scores = new int[numberOfHoles];
+    }
+    const int numberOfHoles = 9;
+    public int currentHole = 1; //index of the current hole
+    public int[] pars;
+    public int[] scores;
+}

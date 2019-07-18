@@ -8,6 +8,7 @@ public class ClubPositionEncoder : MonoBehaviour
     public GameObject golfBall;
     public GameObject magicLeapCamera;
     public RampHandler rampHandler;
+    public ScoreHandler scoreHandler;
     
     public MqttClientHandler mqttClientHandler;
 
@@ -15,6 +16,7 @@ public class ClubPositionEncoder : MonoBehaviour
     GolfBallPositionMessage golfBallPositionMessage;
     MagicLeapCameraPoseMessage cameraPoseMessage;
     RampPose rampPoseMsg;
+    ScoresMessage scoresMessage;
 
     float currTime;
     readonly float timeOut = 0.03f;
@@ -25,6 +27,7 @@ public class ClubPositionEncoder : MonoBehaviour
         golfClubPoseMessage = new GolfClubPoseMessage();
         golfBallPositionMessage = new GolfBallPositionMessage();
         cameraPoseMessage = new MagicLeapCameraPoseMessage();
+        scoresMessage = new ScoresMessage();
 
         currTime = 0;
     }
@@ -55,15 +58,22 @@ public class ClubPositionEncoder : MonoBehaviour
         rampPoseMsg.position = rampHandler.position;
         rampPoseMsg.eulerAngles = rampHandler.eulerAngles;
 
+        scoresMessage.currentHole = scoreHandler.currentHole;
+        scoresMessage.pars = scoreHandler.pars;
+        scoresMessage.scores = scoreHandler.scores;
+
         //Convert to JSON string
         string golfBallPositionJson = JsonUtility.ToJson(golfBallPositionMessage);
         string golfClubPoseJson = JsonUtility.ToJson(golfClubPoseMessage);
         string cameraPositionJson = JsonUtility.ToJson(cameraPoseMessage);
         string rampPoseJson = JsonUtility.ToJson(rampPoseMsg);
+        string scoresJson = JsonUtility.ToJson(scoresMessage);
 
         mqttClientHandler.Publish("MagicPutt/GolfClubPose", golfClubPoseJson);
         mqttClientHandler.Publish("MagicPutt/GolfBallPosition", golfBallPositionJson);
         mqttClientHandler.Publish("MagicPutt/CameraPose", cameraPositionJson);
         mqttClientHandler.Publish("MagicPutt/RampPose", rampPoseJson);
+        mqttClientHandler.Publish("MagicPutt/Scores", scoresJson);
+
     }
 }
