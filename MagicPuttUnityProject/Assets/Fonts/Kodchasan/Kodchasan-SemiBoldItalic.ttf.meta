@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: fa1079a73a22f4a0c9479698774a74ea
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Kodchasan SemiBold
+  fontNames:
+  - Kodchasan SemiBold
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 57fdafa07391044ada780db780a53171, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
