@@ -1,0 +1,3 @@
+[submodule "MagicPuttArCoreClient/Assets/MagicPuttARCorePrivate"]
+	path = MagicPuttArCoreClient/Assets/MagicPuttARCorePrivate
+	url = https://github.com/paulrus123/MagicPuttARCorePrivate.git
